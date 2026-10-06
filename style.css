@@ -1,0 +1,1589 @@
+/* ================================
+   ROOT VARIABLES
+================================ */
+
+:root {
+    --bg: #0a0f1c;
+    --bg-secondary: #111827;
+    --text: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-dark: #0284c7;
+    --border: #1e293b;
+    --card: #111827;
+}
+
+
+/* Light Theme */
+
+body.light-theme {
+    --bg: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --accent: #0284c7;
+    --accent-dark: #0369a1;
+    --border: #e2e8f0;
+    --card: #ffffff;
+}
+
+
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 7%;
+
+    background: rgba(10, 15, 28, 0.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+#theme-toggle {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 80px 10%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.greeting {
+    color: var(--accent);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+.hero h2 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 600px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+/* ================================
+   SOCIAL LINKS
+================================ */
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+.availability {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 6px 12px;
+
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: var(--accent);
+    color: #03111d;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+/* ================================
+   HERO CARD
+================================ */
+
+.hero-card {
+    width: 330px;
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.profile-circle {
+    width: 360px;
+    height: 460px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.hero-card h3 {
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: var(--text-secondary);
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.section {
+    padding: 100px 10%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-label {
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.section-text {
+    max-width: 800px;
+    color: var(--text-secondary);
+    font-size: 17px;
+}
+
+
+/* ================================
+   SKILLS
+================================ */
+
+/* =================================
+   DATA ANALYTICS TOOLKIT
+================================= */
+
+.analytics-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.analytics-intro {
+    max-width: 760px;
+    margin-top: 15px;
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   DASHBOARD GRID
+================================= */
+
+.analytics-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 45px;
+}
+
+
+/* =================================
+   ANALYTICS CARD
+================================= */
+
+.analytics-card {
+    position: relative;
+    padding: 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    min-height: 360px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =================================
+   CARD HEADER
+================================= */
+
+.analytics-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.analytics-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.analytics-card-header h3 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.analytics-card-header p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+
+/* =================================
+   SKILL ROW
+================================= */
+
+.skill-row {
+    margin-bottom: 22px;
+}
+
+.skill-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.skill-row-top strong {
+    color: var(--accent);
+    font-size: 13px;
+}
+
+
+/* =================================
+   SKILL BAR
+================================= */
+
+.skill-track {
+    width: 100%;
+    height: 7px;
+    background: rgba(148, 163, 184, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        #60a5fa
+    );
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+    animation: skillLoad 1.2s ease;
+}
+
+@keyframes skillLoad {
+    from {
+        width: 0;
+    }
+}
+
+
+/* =================================
+   MINI CHART
+================================= */
+
+.mini-chart {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.chart-label {
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* =================================
+   BAR CHART
+================================= */
+
+.bar-chart {
+    height: 75px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 0 5px;
+}
+
+.bar-chart span {
+    flex: 1;
+    min-width: 10px;
+    background: linear-gradient(
+        to top,
+        var(--accent),
+        rgba(56, 189, 248, 0.25)
+    );
+    border-radius: 4px 4px 0 0;
+    opacity: 0.9;
+    animation: barRise 1s ease;
+}
+
+@keyframes barRise {
+    from {
+        height: 0 !important;
+    }
+}
+
+
+/* =================================
+   LINE CHART
+================================= */
+
+.line-chart {
+    width: 100%;
+    height: 80px;
+    overflow: visible;
+}
+
+.line-chart polyline {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(
+        0 0 5px rgba(56, 189, 248, 0.5)
+    );
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawLine 1.8s ease forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =================================
+   BUSINESS INSIGHTS
+================================= */
+
+.insight-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.insight-item:last-of-type {
+    border-bottom: none;
+}
+
+.insight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.insight-item strong {
+    display: block;
+    font-size: 14px;
+}
+
+.insight-item small {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+
+/* =================================
+   INSIGHT FLOW
+================================= */
+
+.insight-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.insight-flow span {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.insight-flow i {
+    color: var(--text-secondary);
+    font-style: normal;
+}
+
+
+/* =================================
+   ANALYTICS WORKFLOW
+================================= */
+
+.analytics-workflow {
+    margin-top: 35px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--card-bg);
+}
+
+.workflow-title {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 95px;
+}
+
+.workflow-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.workflow-step strong {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.workflow-arrow {
+    color: var(--accent);
+    font-size: 20px;
+}
+
+
+/* =================================
+   NOTE
+================================= */
+
+.skills-note {
+    margin-top: 20px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .analytics-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card {
+        min-height: auto;
+    }
+
+    .workflow-steps {
+        flex-direction: column;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .analytics-workflow {
+        padding: 24px 15px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .analytics-card {
+        padding: 22px;
+    }
+
+    .analytics-intro {
+        font-size: 15px;
+    }
+
+    .insight-flow span {
+        padding: 7px 8px;
+        font-size: 9px;
+    }
+
+}
+
+
+/* ================================
+   PROJECTS
+================================ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 35px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.project-number {
+    color: var(--accent);
+    font-size: 13px;
+}
+
+.project-card h3 {
+    margin: 15px 0;
+    font-size: 23px;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.project-tags span {
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    background: var(--bg);
+    color: var(--accent);
+
+    font-size: 12px;
+}
+
+.project-link {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+
+/* ================================
+   EXPERIENCE
+================================ */
+
+.experience-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    padding: 35px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.experience-date {
+    color: var(--accent);
+    font-size: 13px;
+}
+
+.experience-card h3 {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.experience-card h4 {
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.experience-card p {
+    color: var(--text-secondary);
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    padding: 30px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-secondary);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 330px;
+    }
+}
+
+/* =================================
+   HERO PROFILE CARD - COMPACT
+================================= */
+
+.hero-card {
+    padding: 28px;
+}
+
+.profile-circle {
+    width: 300px;
+    max-width: 100%;
+    height: 380px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    overflow: hidden;
+    margin: 0 auto 14px;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.hero-card .availability {
+    margin-bottom: 10px;
+}
+
+.hero-card h3 {
+    margin: 8px 0 8px;
+}
+
+.hero-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+
+.skills-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.skill-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+.skill-panel:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Panel Header */
+
+.skill-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.skill-panel-header span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.skill-panel-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+
+/* Skill Item */
+
+.skill-item {
+    margin-bottom: 22px;
+}
+
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Skill Name + Percentage */
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+.skill-info span:last-child {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+
+
+/* =================================
+   DATA ANALYTICS TOOLKIT
+================================= */
+
+.analytics-section {
+    padding-top: 100px;
+}
+
+.analytics-intro {
+    max-width: 760px;
+    margin-top: 15px;
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   ANALYTICS DASHBOARD
+================================= */
+
+.analytics-dashboard {
+    width: 100%;
+    max-width: 965px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* =================================
+   ANALYTICS CARD
+================================= */
+
+.analytics-card {
+    position: relative;
+    min-height: 390px;
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =================================
+   CARD HEADER
+================================= */
+
+.analytics-card-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.analytics-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.analytics-card-header h3 {
+    margin: 0;
+
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.analytics-card-header p {
+    margin: 6px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   SKILL ROW
+================================= */
+
+.skill-row {
+    margin-bottom: 20px;
+}
+
+.skill-row:last-child {
+    margin-bottom: 0;
+}
+
+.skill-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+}
+
+.skill-row-top strong {
+    color: var(--accent);
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   SKILL PROGRESS
+================================= */
+
+.skill-track {
+    width: 100%;
+    height: 7px;
+
+    background: rgba(148, 163, 184, 0.15);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        #60a5fa
+    );
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 12px rgba(56, 189, 248, 0.35);
+
+    animation: skillLoad 1.2s ease forwards;
+}
+
+@keyframes skillLoad {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+/* =================================
+   MINI CHART CONTAINER
+================================= */
+
+.mini-chart {
+    margin-top: 28px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+.chart-label {
+    margin-bottom: 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =================================
+   MINI BAR CHART
+================================= */
+
+.bar-chart {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 7px;
+
+    padding: 0 4px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.bar-chart span {
+    flex: 1;
+
+    min-width: 8px;
+
+    background: linear-gradient(
+        to top,
+        var(--accent),
+        rgba(56, 189, 248, 0.25)
+    );
+
+    border-radius: 4px 4px 0 0;
+
+    opacity: 0.9;
+
+    animation: barRise 1s ease forwards;
+}
+
+@keyframes barRise {
+
+    from {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    to {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+}
+
+
+/* =================================
+   MINI LINE CHART
+================================= */
+
+.line-chart {
+    width: 100%;
+    height: 85px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+.line-chart polyline {
+    fill: none;
+
+    stroke: var(--accent);
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(56, 189, 248, 0.45)
+        );
+
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+
+    animation:
+        drawLine 1.8s ease forwards;
+}
+
+@keyframes drawLine {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* =================================
+   BUSINESS INSIGHTS
+================================= */
+
+.insight-list {
+    margin-top: 5px;
+}
+
+.insight-item {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.insight-item:last-child {
+    border-bottom: none;
+}
+
+.insight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(56, 189, 248, 0.12);
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.insight-item strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+.insight-item small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* =================================
+   INSIGHT FLOW
+================================= */
+
+.insight-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.insight-flow span {
+    padding: 8px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.insight-flow i {
+    color: var(--text-secondary);
+
+    font-style: normal;
+}
+
+
+/* =================================
+   ANALYTICS WORKFLOW
+================================= */
+
+.analytics-workflow {
+    margin-top: 28px;
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.workflow-title {
+    margin-bottom: 24px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.workflow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 100px;
+
+    text-align: center;
+}
+
+.workflow-step span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: rgba(56, 189, 248, 0.12);
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.workflow-step strong {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.workflow-arrow {
+    color: var(--accent);
+
+    font-size: 20px;
+}
+
+
+/* =================================
+   SKILLS NOTE
+================================= */
+
+.skills-note {
+    margin-top: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =================================
+   ANALYTICS MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .analytics-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-card {
+        min-height: auto;
+    }
+
+    .workflow-steps {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .analytics-section {
+        padding-top: 70px;
+    }
+
+    .analytics-intro {
+        font-size: 15px;
+    }
+
+    .analytics-card {
+        padding: 22px;
+    }
+
+    .analytics-card-header h3 {
+        font-size: 19px;
+    }
+
+    .workflow-steps {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .analytics-workflow {
+        padding: 24px 15px;
+    }
+
+    .insight-flow {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+    .analytics-card {
+        padding: 18px;
+    }
+
+    .analytics-intro {
+        font-size: 14px;
+    }
+
+    .bar-chart {
+        gap: 4px;
+    }
+
+    .skill-row-top {
+        font-size: 13px;
+    }
+
+}
